@@ -1,6 +1,7 @@
 import os
 
-from pyrogram import Client, Filters, Message
+from pyrogram import Client
+from pyrogram.types import Message
 from pyrogram.api import functions, types
 
 bot = Client("PyrogramJSON_bot")
