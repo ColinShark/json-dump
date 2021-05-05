@@ -4,10 +4,15 @@ from pyrogram import Client
 from pyrogram.types import Message
 from pyrogram.raw import functions, types
 
-bot = Client("PyrogramJSON_bot")
+bot = Client(
+    "PyrogramJSON_bot",
+    bot_token = os.environ["BOT_TOKEN"],
+    api_id = int(os.environ["API_ID"]),
+    api_hash = os.environ["API_HASH"]
+)
 
 
-@bot.on_message()
+@bot.on_message(filters.text)
 async def dump(bot: Client, message: Message):
     m_id = (
         message.reply_to_message.message_id
